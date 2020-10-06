@@ -28,7 +28,7 @@ connectDB();
 
 app.get("/", async (req, res) => {
     // const document = BUS_STOPS.features;
-    // await BusStops.insertMany(document);
+    // const final = document.map(async (doc)=> await BusStops.insertOne(doc));
     // const data = await BusStops.find({});
     // console.log(data);
     res.status(200).send("Done!");

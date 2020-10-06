@@ -6,7 +6,7 @@ const busStopsSchema = new Schema({
         type: String,
     },
     properties: {
-        name: { type: String},
+        name: { type: String, unique: true},
         degree: { type: Number}
     },
     geometry: {
