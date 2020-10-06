@@ -27,11 +27,11 @@ const connectDB = async () => {
 connectDB();
 
 app.get("/", async (req, res) => {
-    const document = BUS_STOPS.features;
-    await BusStops.insertMany(document);
-    const data = await BusStops.find({});
-    console.log(data);
-    res.send("Done!");
+    // const document = BUS_STOPS.features;
+    // await BusStops.insertMany(document);
+    // const data = await BusStops.find({});
+    // console.log(data);
+    res.status(200).send("Done!");
 })
 
 app.post("/find", async (req, res) => {
