@@ -14,7 +14,7 @@
       }
     ], 
     "env": {
-      "MONGOURI": "@mongoUri",
+      "MONGOURI": "@mongouri",
       "CORS_ORIGIN": "*"
     }
   }
