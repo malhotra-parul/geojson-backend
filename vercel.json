@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "name": "server",
+    "builds": [
+      {
+        "src": "app.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/.*",
+        "dest": "app.js"
+      }
+    ], 
+    "env": {
+      "MONGOURI": "@mongoUri",
+      "CORS_ORIGIN": "*"
+    }
+  }

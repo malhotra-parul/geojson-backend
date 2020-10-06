@@ -1,14 +1,30 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const BUS_STOPS = require("./popular_bus_stops.json");
 const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5001;
-require("./dbConnect");
 const BusStops = require("./models/busStops");
 
+app.use(express());
+require('dotenv').config();
 app.use(cors());
 app.use(express.json({extended: false}));
 app.use(express.urlencoded({extended: false}));
+
+const connectDB = async () => {
+    try{
+        await mongoose.connect(process.env.MONGOURI , {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+          });
+        console.log('db connected..!');
+    }
+    catch(err){
+        console.log(err);
+    }
+};
+connectDB();
 
 app.get("/", async (req, res) => {
     const document = BUS_STOPS.features;
