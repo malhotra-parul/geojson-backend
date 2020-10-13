@@ -47,7 +47,7 @@ app.post("/find", async (req, res) => {
                 $centerSphere: [[lng, lat], radius]
             }
         }
-    }).limit(40);
+    });
 
     console.log(found, found.length);
 
